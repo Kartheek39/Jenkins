@@ -28,3 +28,8 @@ pipeline {
         }
     }
 }
+post{
+    always{
+        slackSend channel: '#random', message: 'haii'
+    }
+}
