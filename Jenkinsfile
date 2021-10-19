@@ -30,10 +30,10 @@ pipeline {
 
     post{
         success{
-            slackSend channel: '#random', color: 'green', message: 'success'
+            slackSend channel: '#random', color: 'good', message: 'success'
         }
         failure{
-            slackSend channel: '#random', color: 'green', message: 'failure'
+            slackSend channel: '#random', color: 'danger', message: 'failure'
         }
     }
 }
