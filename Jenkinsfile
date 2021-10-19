@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
                 sh 'echo hello world'
-                sh 'echo SAMPLE_URL'
+                sh 'echo ${SAMPLE_URL}'
             }
         }
         stage('two'){
