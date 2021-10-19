@@ -7,6 +7,7 @@ pipeline {
 //    }
     environment{
         SAMPLE_URL = "google.com"
+        SLACK_TOKEN = credentials"slack"
     }
     stages {
         stage('one') {
@@ -18,6 +19,7 @@ pipeline {
             steps {
                 sh 'echo hello world'
                 sh 'echo ${SAMPLE_URL}'
+                sh 'echo ${SLACK_TOKEN}'
             }
         }
         stage('two'){
@@ -25,6 +27,9 @@ pipeline {
                 node {
                     label 'JAVA'
                 }
+            }
+            environment{
+                SAMPLE_URL = "yahoo.com"
             }
             steps{
                 sh 'echo hello world 2'
