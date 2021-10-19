@@ -27,9 +27,10 @@ pipeline {
             }
         }
     }
-}
-post{
-    always{
-        slackSend channel: '#random', message: 'hello'
+
+    post{
+        always{
+            slackSend channel: '#random', message: 'hello'
+        }
     }
 }
