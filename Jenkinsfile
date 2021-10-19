@@ -5,6 +5,9 @@ pipeline {
 //            label 'WORKSTATION'
 //        }
 //    }
+    environment{
+        SAMPLE_URL = "google.com"
+    }
     stages {
         stage('one') {
             agent {
@@ -14,6 +17,7 @@ pipeline {
             }
             steps {
                 sh 'echo hello world'
+                sh 'echo SAMPLE_URL'
             }
         }
         stage('two'){
@@ -23,7 +27,7 @@ pipeline {
                 }
             }
             steps{
-                shh 'echo hello world 2'
+                sh 'echo hello world 2'
             }
         }
     }
