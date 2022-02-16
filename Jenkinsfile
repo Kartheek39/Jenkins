@@ -75,58 +75,69 @@
 //    }
 //}
 
+// pipeline{
+//     agent any
+//     stages{
+//         stage('seq1'){
+//             steps{
+//                 sh 'echo hello'
+//             }
+//
+//         }
+//         stage('par1'){
+//             parallel{
+//                 stage('p1'){
+//                     steps{
+//                         sh 'sleep 20'
+//                     }
+//                 }
+//                 stage('p2'){
+//                     steps{
+//                         sh 'sleep 50'
+//                     }
+//                 }
+//                 stage('p3'){
+//                     steps{
+//                         sh 'sleep 80'
+//                     }
+//                 }
+//             }
+//         }
+//         stage('par2'){
+//             parallel{
+//                 stage('p1'){
+//                     steps{
+//                         sh 'sleep 20'
+//                     }
+//                 }
+//                 stage('p2'){
+//                     steps{
+//                         sh 'sleep 50'
+//                     }
+//                 }
+//                 stage('p3'){
+//                     steps{
+//                         sh 'sleep 80'
+//                     }
+//                 }
+//             }
+//         }
+//         stage('seq2'){
+//             steps{
+//                 sh 'echo hello'
+//             }
+//         }
+//
+//     }
+// }
+
 pipeline{
     agent any
     stages{
-        stage('seq1'){
-            steps{
-                sh 'echo hello'
-            }
-
-        }
-        stage('par1'){
-            parallel{
-                stage('p1'){
-                    steps{
-                        sh 'sleep 20'
-                    }
-                }
-                stage('p2'){
-                    steps{
-                        sh 'sleep 50'
-                    }
-                }
-                stage('p3'){
-                    steps{
-                        sh 'sleep 80'
-                    }
-                }
-            }
-        }
-        stage('par2'){
-            parallel{
-                stage('p1'){
-                    steps{
-                        sh 'sleep 20'
-                    }
-                }
-                stage('p2'){
-                    steps{
-                        sh 'sleep 50'
-                    }
-                }
-                stage('p3'){
-                    steps{
-                        sh 'sleep 80'
-                    }
-                }
-            }
-        }
-        stage('seq2'){
-            steps{
-                sh 'echo hello'
-            }
-        }
-
+      stage(seq1){
+         steps{
+           echo "hello pipeline started"
+         }
+      }
     }
 }
